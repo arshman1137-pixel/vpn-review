@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "node scripts/hooks/session-start.js"
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "node scripts/hooks/session-end.js"
+      }
+    ],
+    "PreCompact": [
+      {
+        "type": "command",
+        "command": "node scripts/hooks/pre-compact.js"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "type": "command",
+        "command": "node scripts/hooks/check-secrets.js"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Agent",
+        "type": "command",
+        "command": "node scripts/hooks/cost-tracker.js"
+      }
+    ]
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "_meta": {
+    "schema_version": "1.0.0",
+    "generated_by": "CTO Agent (claude-sonnet-4-6)",
+    "last_updated": "2026-05-14T00:00:00.000Z",
+    "operator": "Suzan Attallah",
+    "operator_email": "suzan.attallah@roboco-op.org",
+    "dashboard_url": "https://v0-mission-control-setup-alck1ds3x-suzans-projects-24199d47.vercel.app/"
+  },
+
+  "budget": {
+    "total_usd": 500.00,
+    "spent_usd": 3.42,
+    "remaining_usd": 496.58,
+    "utilization_pct": 0.7,
+    "reset_date": "2026-06-01",
+    "warning_threshold_pct": 80,
+    "breakdown": {
+      "ceo_agent_usd": 1.85,
+      "cto_agent_usd": 0.92,
+      "cmo_agent_usd": 0.41,
+      "coo_agent_usd": 0.18,
+      "cfr_agent_usd": 0.06
+    }
+  },
+
+  "businesses": [
+    {
+      "id": "aaaaaaaa-0001-0001-0001-000000000001",
+      "slug": "patent-mining-spain",
+      "name": "Patent Mining Spain",
+      "name_es": "Minería de Patentes — España",
+      "tagline": "USPTO expired patents → Amazon.es FBA physical products",
+      "business_type": "physical_product",
+      "status": "active",
+      "phase": "Phase 1 — Discovery",
+      "phase_week": "Week 1-2",
+      "site_url": "https://www.amazon.es/s?me=PENDING_SELLER_ID",
+      "repo_path": "businesses/patent-mining-spain/",
+      "pivot_from": "ArabReviews (affiliate_seo)",
+      "pivot_date": "2026-05-14",
+      "pivot_reason": "Higher ARPU (48% margin vs ~5% affiliate), Spanish language moat, operator speaks Spanish",
+      "target_markets": ["Spain", "Germany", "France", "Italy"],
+      "languages": ["Spanish", "English"],
+      "monetization": {
+        "channels": ["Amazon.es FBA", "Amazon.de FBA", "Amazon.fr FBA", "Amazon.it FBA"],
+        "amazon_seller_account": "pending — €39/month (ONE-WAY DOOR — confirm before opening)",
+        "ppc_budget_eur_day": 5,
+        "unit_economics": {
+          "sale_price_eur": 14.99,
+          "manufacturing_cost_eur": 2.00,
+          "shipping_to_fba_eur": 0.80,
+          "amazon_fba_fees_eur": 3.50,
+          "ppc_per_unit_eur": 1.50,
+          "net_profit_eur": 7.19,
+          "margin_pct": 48
+        },
+        "revenue_mtd_eur": 0.00,
+        "revenue_total_eur": 0.00,
+        "mrr_eur": 0.00
+      },
+      "pipeline": {
+        "step_1": "USPTO PatentsView API → filter (expiry>2014, category: kitchen/home/garden/pet, employees<50)",
+        "step_2": "Claude scoring prompt → JSON score 1-10, keep only 7+",
+        "step_3": "Amazon.es Best Sellers + Helium 10 → validate demand",
+        "step_4": "Alibaba samples €200-400 → quality check",
+        "step_5": "Amazon Seller account + FBA listing + PPC launch",
+        "script_scraper": "businesses/patent-mining-spain/pipeline/scraper.py",
+        "script_scorer": "businesses/patent-mining-spain/pipeline/scorer.py"
+      },
+      "metrics": {
+        "patents_scraped": 0,
+        "patents_scored": 0,
+        "patents_above_threshold": 0,
+        "products_sampled": 0,
+        "products_listed": 0,
+        "units_sold_mtd": 0,
+        "amazon_bsr": null
+      },
+      "experiments": {
+        "total": 3,
+        "pending": 2,
+        "running": 1,
+        "success": 0,
+        "failed": 0,
+        "items": [
+          {
+            "id": 1,
+            "hypothesis": "USPTO scraper returns 50+ scoreable patents in kitchen/garden/pet categories",
+            "metric": "Patents fetched with complete data",
+            "target": "50",
+            "status": "running",
+            "started_at": "2026-05-14T00:00:00.000Z",
+            "completed_at": null
+          },
+          {
+            "id": 2,
+            "hypothesis": "Claude scoring identifies 3+ products with score ≥ 7 from first patent batch",
+            "metric": "Patents with score ≥ 7",
+            "target": "3",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          },
+          {
+            "id": 3,
+            "hypothesis": "Alibaba supplier found for top-scored product at < €2/unit, MOQ ≤ 1,000",
+            "metric": "Supplier quotes received",
+            "target": "3",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          }
+        ]
+      },
+      "completed_tasks": [
+        { "date": "2026-05-14", "task": "CEO approved pivot from ArabReviews to Patent Mining Spain", "agent": "CEO" },
+        { "date": "2026-05-14", "task": "Created businesses/patent-mining-spain/ directory structure", "agent": "CTO" },
+        { "date": "2026-05-14", "task": "Wrote USPTO PatentsView scraper (pipeline/scraper.py)", "agent": "CTO" },
+        { "date": "2026-05-14", "task": "Wrote Claude scoring pipeline (pipeline/scorer.py, threshold 7+)", "agent": "CTO" },
+        { "date": "2026-05-14", "task": "Updated MEMORY.md and MISSION_CONTROL.md with pivot", "agent": "CEO" }
+      ],
+      "next_action": "CTO: run `python pipeline/scraper.py` and verify first patent batch (target: 50+ results)"
+    },
+
+    {
+      "id": "aaaaaaaa-0002-0002-0002-000000000002",
+      "slug": "digital-souq",
+      "name": "DigitalSouq",
+      "name_ar": "قوالب ومنتجات رقمية",
+      "tagline": "منتجات رقمية للمحترفين العرب",
+      "business_type": "digital_product",
+      "status": "active",
+      "site_url": "https://robocoop.gumroad.com",
+      "repo_path": "businesses/digital-souq/",
+      "target_markets": ["Egypt", "Saudi Arabia", "UAE", "MENA"],
+      "languages": ["Arabic", "English"],
+      "monetization": {
+        "channels": ["Gumroad", "Stripe (via Gumroad)"],
+        "platform_username": "robocoop",
+        "products": [
+          { "name": "قالب Notion للعمل الحر العربي", "price_usd": 9, "status": "pending" },
+          { "name": "قالب Canva لمحتوى إنستغرام بالعربي", "price_usd": 7, "status": "pending" },
+          { "name": "حزمة 50 Prompt لـ ChatGPT للأعمال العربية", "price_usd": 12, "status": "pending" },
+          { "name": "Bundle الثلاثة معًا", "price_usd": 19, "status": "pending" }
+        ],
+        "revenue_mtd_usd": 0.00,
+        "revenue_total_usd": 0.00
+      },
+      "metrics": {
+        "products_live": 0,
+        "products_target": 3,
+        "gumroad_views_mtd": 0,
+        "sales_mtd": 0,
+        "avg_order_value_usd": 0
+      },
+      "experiments": {
+        "total": 3,
+        "pending": 3,
+        "running": 0,
+        "success": 0,
+        "failed": 0,
+        "items": [
+          {
+            "id": 1,
+            "hypothesis": "نشر قالب Notion للعمل الحر بـ $9 على Gumroad → 10 مبيعات في أسبوعين",
+            "metric": "Sales count",
+            "target": "10",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          },
+          {
+            "id": 2,
+            "hypothesis": "مشاركة القوالب في مجموعات Telegram و Facebook العربية → 500 مشاهدة للصفحة خلال أسبوع",
+            "metric": "Gumroad page views",
+            "target": "500",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          },
+          {
+            "id": 3,
+            "hypothesis": "تقديم Bundle بـ $19 بدل $9 للقالب الواحد → رفع متوسط قيمة الطلب 50%",
+            "metric": "Average order value USD",
+            "target": "19",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          }
+        ]
+      },
+      "completed_tasks": [
+        { "date": "2026-05-14", "task": "إنشاء مجلد المشروع businesses/digital-souq/", "agent": "CTO" },
+        { "date": "2026-05-14", "task": "تحديد lineup المنتجات الأربعة مع التسعير", "agent": "CFO" },
+        { "date": "2026-05-14", "task": "تسجيل المشروع في Supabase seed", "agent": "CTO" }
+      ],
+      "next_action": "CMO يصمم أول قالب Notion ويكتب listing page لـ Gumroad بالعربي والإنجليزي"
+    },
+
+    {
+      "id": "aaaaaaaa-0003-0003-0003-000000000003",
+      "slug": "ai-sales-buddy",
+      "name": "AI Sales Buddy",
+      "name_ar": "مساعد المبيعات الذكي",
+      "tagline": "AI widget لأتمتة capture العملاء وحجز الديمو للشركات B2B",
+      "business_type": "saas",
+      "status": "active",
+      "site_url": "https://pronto-ai-sales-buddy.lovable.app/",
+      "repo_path": "businesses/ai-sales-buddy/",
+      "target_markets": ["Global", "MENA B2B"],
+      "languages": ["English", "Arabic"],
+      "monetization": {
+        "channels": ["Stripe Subscriptions"],
+        "pricing_tiers": [
+          { "name": "Starter", "price_usd_month": 29, "status": "pending" },
+          { "name": "Growth", "price_usd_month": 79, "status": "pending" },
+          { "name": "Scale", "price_usd_month": 199, "status": "pending" }
+        ],
+        "mrr_usd": 0.00,
+        "revenue_total_usd": 0.00,
+        "paying_customers": 0
+      },
+      "metrics": {
+        "demo_bookings_mtd": 0,
+        "landing_page_cvr_pct": 0,
+        "stripe_live": false,
+        "arabic_ui_live": false
+      },
+      "experiments": {
+        "total": 3,
+        "pending": 3,
+        "running": 0,
+        "success": 0,
+        "failed": 0,
+        "items": [
+          {
+            "id": 1,
+            "hypothesis": "إضافة pricing page بـ 3 tiers + Stripe checkout → 5 عملاء يدفعون خلال أسبوعين",
+            "metric": "Paying customers",
+            "target": "5",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          },
+          {
+            "id": 2,
+            "hypothesis": "إضافة Arabic UI toggle للـ widget → زيادة MENA leads بنسبة 30% خلال أسبوعين",
+            "metric": "MENA lead count increase %",
+            "target": "30",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          },
+          {
+            "id": 3,
+            "hypothesis": "نشر case study يُظهر زيادة demo bookings → رفع landing page CVR إلى 5%",
+            "metric": "Landing page CVR %",
+            "target": "5",
+            "status": "pending",
+            "started_at": null,
+            "completed_at": null
+          }
+        ]
+      },
+      "completed_tasks": [
+        { "date": "2026-05-14", "task": "إنشاء مجلد المشروع businesses/ai-sales-buddy/", "agent": "CTO" },
+        { "date": "2026-05-14", "task": "توثيق المشروع الحالي على Lovable.dev في README", "agent": "CTO" },
+        { "date": "2026-05-14", "task": "تحديد 3 تجارب أولية مع مقاييس SaaS", "agent": "CEO" }
+      ],
+      "next_action": "CTO يضيف Stripe pricing page بثلاثة tiers على Lovable.dev — هذه هي أعلى تجربة أولوية"
+    }
+  ],
+
+  "agents": [
+    {
+      "role": "CEO",
+      "model": "claude-opus-4-7",
+      "status": "idle",
+      "runs_total": 2,
+      "cost_usd_total": 1.85,
+      "last_run": "2026-05-14T00:00:00.000Z",
+      "schedule": "daily 09:00 JST heartbeat"
+    },
+    {
+      "role": "CTO",
+      "model": "claude-sonnet-4-6",
+      "status": "idle",
+      "runs_total": 3,
+      "cost_usd_total": 0.92,
+      "last_run": "2026-05-14T00:00:00.000Z",
+      "schedule": "on-demand"
+    },
+    {
+      "role": "CMO",
+      "model": "claude-sonnet-4-6",
+      "status": "idle",
+      "runs_total": 1,
+      "cost_usd_total": 0.41,
+      "last_run": "2026-05-14T00:00:00.000Z",
+      "schedule": "on-demand"
+    },
+    {
+      "role": "COO",
+      "model": "claude-sonnet-4-6",
+      "status": "idle",
+      "runs_total": 1,
+      "cost_usd_total": 0.18,
+      "last_run": "2026-05-14T00:00:00.000Z",
+      "schedule": "daily 21:00 JST heartbeat"
+    },
+    {
+      "role": "CFO",
+      "model": "claude-sonnet-4-6",
+      "status": "idle",
+      "runs_total": 1,
+      "cost_usd_total": 0.06,
+      "last_run": "2026-05-14T00:00:00.000Z",
+      "schedule": "weekly revenue report"
+    }
+  ],
+
+  "recent_activity": [
+    {
+      "timestamp": "2026-05-14T00:00:00.000Z",
+      "agent": "CTO",
+      "model": "claude-sonnet-4-6",
+      "task": "Create mission_control_data.json with full business state",
+      "business": null,
+      "cost_usd": 0.12,
+      "status": "success"
+    },
+    {
+      "timestamp": "2026-05-14T00:00:00.000Z",
+      "agent": "CTO",
+      "model": "claude-sonnet-4-6",
+      "task": "Update config.ts SITE_URLS + TYPE_CONFIG for Suzan's 3 businesses",
+      "business": null,
+      "cost_usd": 0.08,
+      "status": "success"
+    },
+    {
+      "timestamp": "2026-05-14T00:00:00.000Z",
+      "agent": "CTO",
+      "model": "claude-sonnet-4-6",
+      "task": "Create Supabase seed SQL (seed-suzan.sql) with 3 startups + 9 experiments",
+      "business": null,
+      "cost_usd": 0.09,
+      "status": "success"
+    },
+    {
+      "timestamp": "2026-05-14T00:00:00.000Z",
+      "agent": "CEO",
+      "model": "claude-opus-4-7",
+      "task": "Business selection: ArabReviews + DigitalSouq + AI Sales Buddy — MENA Arabic moat strategy",
+      "business": null,
+      "cost_usd": 1.85,
+      "status": "success"
+    }
+  ],
+
+  "summary": {
+    "total_businesses": 3,
+    "active_businesses": 3,
+    "total_experiments": 9,
+    "running_experiments": 0,
+    "completed_experiments": 0,
+    "agents_online": 5,
+    "budget_spent_pct": 0.7,
+    "total_revenue_usd": 0.00,
+    "strategy_note": "جميع الأعمال الثلاثة تستغل الميزة التنافسية العربية — منافسة أقل بـ 10-50x مقارنة بالإنجليزية في نفس النيشات"
+  }
+}
