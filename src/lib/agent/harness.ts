@@ -25,7 +25,7 @@ export async function runAgent(
   prompt: string,
   supabaseServiceClient: SupabaseClient<any, any, any>
 ): Promise<AgentResult> {
-  const model: ModelName = config.model ?? 'claude-3-5-sonnet-20240620'
+const model: ModelName = config.model ?? 'claude-sonnet-4-6'
   const maxTokens = config.maxTokens ?? 1000
 
   await checkBudgetPreFlight(supabaseServiceClient, config.userId)
