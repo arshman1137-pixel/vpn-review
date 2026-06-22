@@ -13,7 +13,7 @@ import { anthropic } from './anthropicClient'
 export interface AgentConfig {
   userId: string
   startupId: string
-  taskType: TaskType
+  taskType: any
   model?: ModelName
   maxTokens?: number
 }
